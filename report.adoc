@@ -1,0 +1,55 @@
+= Investigating popular datasets and DNN architectures
+Dillon Sahadevan <dillon.sahadevan@ucalgary.ca>
+:toc:
+
+== Introduction
+
+This paper is a continuation of "A Survey on Deep Neural Network Security in an Embedded Context". In this paper, we will be investigating some of the datasets and models described in survey. This paper will cover environment setup, dataset preparation, model training, and model evaluation.
+
+== Datasets and Models
+
+The following table describes the datasets and models that will be investigated in this paper.
+
+[cols="1,1", options="header"]
+|===
+| Dataset | Model
+| MNIST | CNN with 2 convolutional layers and 2 fully connected layers (CNN-2-2)
+| CIFAR-10 | -
+| ImageNet | -
+|===
+
+== Environment Setup
+
+=== Hardware
+
+The following table describes the hardware used for this paper.
+
+[cols="1,1", options="header"]
+|===
+| Component | Specification
+| CPU | Ryzen 5 5600
+| GPU | NVIDIA GeForce RTX 3070
+| RAM | 32 GB
+|===
+
+=== Software
+
+The following table describes the relevant software used for this paper.
+
+[cols="1,1", options="header"]
+|===
+| Component | Specification
+| OS | Windows 11
+| Python | 3.8.5
+| PyTorch | 1.8.1
+| CUDA | 11.1
+|===
+
+=== Setting up the Environment
+
+Python was installed from the official https://www.python.org/downloads/[Python website]. PyTorch was installed using the following command (found on the https://pytorch.org/get-started/locally/[PyTorch website]):
+
+```bash
+pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+```
+
