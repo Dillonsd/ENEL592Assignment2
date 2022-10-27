@@ -3,19 +3,20 @@ from torchvision import datasets
 from torchvision.transforms import ToTensor
 import numpy as np
 import torch
+import os
 
 # Class for loading the MNIST dataset
 class MNIST():
   def __init__(self):
     # Download training data from open datasets.
     self.train_data = datasets.MNIST(
-      root="./train",
+      root=os.path.abspath(os.path.join(os.path.dirname(__file__), 'train')),
       train=True,
       download=True,
       transform=ToTensor(),
     )
     self.test_data = datasets.MNIST(
-      root="./test",
+      root=os.path.abspath(os.path.join(os.path.dirname(__file__), 'test')),
       train=False,
       download=True,
       transform=ToTensor(),

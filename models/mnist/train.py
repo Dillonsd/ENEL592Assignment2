@@ -15,7 +15,6 @@ mnist = MNIST()
 
 # Define loaders
 train_loader = mnist.get_train_data_loader(batch_size=100, shuffle=True)
-test_loader = mnist.get_train_data_loader(batch_size=100, shuffle=False)
 
 # Define the model
 net = CNN22().to(device)

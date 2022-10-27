@@ -1,5 +1,7 @@
 models/mnist/test/
 models/mnist/train/
+datasets/mnist/test
+datasets/mnist/train
 models/mnist/model_??.pth
 *.svg
 .asciidoctor

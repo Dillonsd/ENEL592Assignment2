@@ -147,3 +147,9 @@ The model was trained using the 'models/mnist/train.py' script. The following ta
 | Optimizer | Adam
 | Loss Function | Cross Entropy
 |===
+
+=== Evaluation
+
+The model was evaluated using the 'models/mnist/evaluate.py' script. A final accuracy of 99.21% was achieved on the test set. The following is a random sample of 5 images from the MNIST test dataset along with the model's prediction, true value, and confidence (these can be obtained by running the 'models/mnist/evaluate.py' script).
+
+image::media/mnist_results_sample.png[]
