@@ -53,3 +53,44 @@ Python was installed from the official https://www.python.org/downloads/[Python 
 pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
 ```
 
+=== Project Structure
+
+The source code for this paper can be found on https://github.com/Dillonsd/ENEL592Assignment2[Github]. The directory structure is split into two parts: the 'models' directory and the 'datasets' directory. The 'models' directory contains the source code for the models that will be trained and evaluated. The 'datasets' directory contains the different datasets used.
+
+For example, the following shows files relevant to MNIST and the CNN-2-2 model.
+
+[plantuml, format=svg, opts="inline"]
+----
+skinparam Legend {
+	BackgroundColor transparent
+	BorderThickness 0
+	FontName "Noto Serif", "DejaVu Serif", serif
+	FontSize 17
+}
+
+' We use skinparams to hide our dummy participant
+' and make it as little space as possible
+skinparam SequenceLifeLineBorderThickness 0
+skinparam SequenceLifeLineBorderColor transparent
+skinparam SequenceParticipant {
+	BackgroundColor transparent
+	BorderColor transparent
+	Shadowing false
+	FontSize 0
+	BorderThickness 0
+	Padding 0
+}
+hide footbox
+
+' "participant" nudges PlantUML to a sequence diagram
+participant dummy
+
+legend top left
+Root
+|_ Element 1
+  |_ Element 1.1
+  |_ Element 1.2
+|_ Element 2
+  |_ Element 2.1
+end legend
+----
