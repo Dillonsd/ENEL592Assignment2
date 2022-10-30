@@ -37,18 +37,18 @@ with torch.no_grad():
 print('Accuracy: {}%'.format(100 * correct / total))
 
 # Display some images with their predicted labels, true labels and confidence
-dataiter = iter(test_loader)
-images, labels = dataiter.next()
-images = images.to(device)
-labels = labels.to(device)
-outputs = net(images)
-_, predicted = torch.max(outputs, 1)
-fig = plt.figure(figsize=(25, 4))
-for idx in range(20):
-  ax = fig.add_subplot(2, 10, idx + 1, xticks=[], yticks=[])
-  plt.imshow(images[idx].cpu().numpy().transpose((1, 2, 0)))
-  # Display the predicted label and the true label and the confidence
-  ax.set_title("{} ({}) {:.2f}%".format(cifar10.classes[predicted[idx]], cifar10.classes[labels[idx]],
-                100 * torch.softmax(outputs, dim=1)[idx][predicted[idx]].item()),
-                color=("green" if predicted[idx] == labels[idx] else "red"))
+fig, ax = plt.subplots(nrows=1, ncols=5, figsize=(5, 1))
+with torch.no_grad():
+  for i, (images, labels) in enumerate(test_loader):
+    images = images.to(device)
+    labels = labels.to(device)
+    outputs = net(images)
+    _, predicted = torch.max(outputs.data, 1)
+    for j in range(5):
+      ax[j].imshow(images[j].cpu().permute(1, 2, 0))
+      ax[j].set_title('P: {}, T: {}, C: {:.2f}%'.format(predicted[j].item(), labels[j].item(),
+        100 * torch.softmax(outputs, dim=1)[j][predicted[j]].item()))
+      ax[j].axis('off')
+    plt.show()
+    break
 plt.show()

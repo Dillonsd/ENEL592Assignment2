@@ -2,7 +2,7 @@ from torchvision.models import resnet18
 import torch
 
 def ResNet18():
-  return resnet18(pretrained=False)
+  return resnet18()
 
 if __name__ == "__main__":
   # Print a summary of the model
