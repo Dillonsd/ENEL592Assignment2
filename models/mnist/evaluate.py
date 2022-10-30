@@ -1,4 +1,3 @@
-from pyexpat import model
 import torch
 import sys
 import os
